@@ -1,6 +1,6 @@
 namespace BackendTemplate.Domain.TodoItems;
 
-public class TodoItem
+public sealed class TodoItem
 {
     public TodoItemId Id { get; private set; }
     public string Title { get; private set; } = string.Empty;

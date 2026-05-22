@@ -1,9 +1,10 @@
 namespace BackendTemplate.Domain.Common;
 
-public sealed class Result<T>
+public sealed class Result<T> where T : notnull
 {
     private readonly T? _value;
     private readonly string? _error;
+    private readonly ErrorKind _kind;
 
     private Result(T value)
     {
@@ -14,13 +15,16 @@ public sealed class Result<T>
     private Result(string error, ErrorKind kind)
     {
         _error = error;
-        Kind = kind;
+        _kind = kind;
         IsSuccess = false;
     }
 
     public bool IsSuccess { get; }
     public bool IsFailure => !IsSuccess;
-    public ErrorKind Kind { get; }
+
+    public ErrorKind Kind => IsFailure
+        ? _kind
+        : throw new InvalidOperationException("Cannot access Kind on a successful Result.");
 
     public T Value => IsSuccess
         ? _value!
