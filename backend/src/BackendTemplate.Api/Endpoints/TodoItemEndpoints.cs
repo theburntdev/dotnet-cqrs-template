@@ -45,7 +45,7 @@ public static class TodoItemEndpoints
         CancellationToken ct = default)
     {
         var result = await sender.Send(new GetTodoItemQuery(new TodoItemId(id)), ct);
-        return result.ToHttpResult(dto => TypedResults.Ok(dto));
+        return result.ToHttpResult();
     }
 
     private static async Task<IResult> Create(
