@@ -39,13 +39,13 @@ Infrastructure → Application  (implements interfaces defined in Application)
 ## Essential commands
 ```powershell
 # Build
-dotnet build backend/BackendTemplate.sln
+dotnet build backend/BackendTemplate.slnx
 
 # Run API (hot reload)
 dotnet watch --project backend/src/BackendTemplate.Api
 
 # Run all tests
-dotnet test backend/BackendTemplate.sln
+dotnet test backend/BackendTemplate.slnx
 
 # Run a single test project
 dotnet test backend/tests/BackendTemplate.Api.Tests

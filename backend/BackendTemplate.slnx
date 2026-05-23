@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/BackendTemplate.Domain/BackendTemplate.Domain.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BackendTemplate.Domain.Tests/BackendTemplate.Domain.Tests.csproj" />
+    <Project Path="tests/BackendTemplate.Testing.Common/BackendTemplate.Testing.Common.csproj" />
+  </Folder>
+</Solution>
