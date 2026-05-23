@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Your Name",
+  "classifications": ["Web API", "CQRS", "Clean Architecture"],
+  "identity": "BackendTemplate.CqrsApi",
+  "name": "CQRS ASP.NET Core API",
+  "shortName": "cqrs-api",
+  "description": "ASP.NET Core minimal API with CQRS (MediatR), EF Core + Postgres, FluentValidation, Mapperly, and Serilog.",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "BackendTemplate",
+  "preferNameDirectory": true
+}
