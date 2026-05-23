@@ -13,6 +13,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Testcontainers.PostgreSql" Version="3.10.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.5" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../../src/BackendTemplate.Infrastructure/BackendTemplate.Infrastructure.csproj" />
