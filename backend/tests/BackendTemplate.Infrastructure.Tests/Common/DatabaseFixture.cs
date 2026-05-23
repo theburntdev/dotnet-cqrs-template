@@ -23,7 +23,7 @@ public class DatabaseFixture : IAsyncLifetime
     {
         await _container.StartAsync();
         await using var context = CreateContext();
-        await context.Database.EnsureCreatedAsync();
+        await context.Database.MigrateAsync();
     }
 
     public async Task DisposeAsync() => await _container.DisposeAsync();
