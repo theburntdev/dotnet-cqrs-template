@@ -1,5 +1,7 @@
 using BackendTemplate.Application.Common;
+using BackendTemplate.Application.TodoItems;
 using BackendTemplate.Infrastructure.Persistence;
+using BackendTemplate.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,8 +18,7 @@ public static class DependencyInjection
             options.UseNpgsql(configuration.GetConnectionString("Default")));
 
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<AppDbContext>());
-        // TODO: Uncomment in Task 11 when TodoItemRepository is implemented
-        // services.AddScoped<ITodoItemRepository, TodoItemRepository>();
+        services.AddScoped<ITodoItemRepository, TodoItemRepository>();
 
         return services;
     }
