@@ -84,6 +84,7 @@ dotnet ef database update --project backend/src/BackendTemplate.Infrastructure -
   - **Query handlers** return a read model DTO (defined and mapped in `BackendTemplate.Application`) — the endpoint forwards it unchanged.
   - **Command handlers** return `Result<TEntity>` — the endpoint maps to a response DTO via a mapper in `BackendTemplate.Api`.
   - Never put mappers in `Domain`.
+- Mapperly mappers are `static partial class` — no interface, no DI registration. Call directly: `TodoItemMapper.Map(item)`. Source-generated pure functions have no testable behavior to mock.
 - Async all the way down — every method touching I/O returns `Task<T>`.
 - Nullable reference types enabled (`<Nullable>enable</Nullable>`) — no `#nullable disable`, no `!` suppression without a comment explaining why.
 - Never throw exceptions for expected domain errors; use `Result<T>` (defined in `BackendTemplate.Domain.Common`).

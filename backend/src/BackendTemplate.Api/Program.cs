@@ -1,6 +1,6 @@
 using BackendTemplate.Api.Endpoints;
 using BackendTemplate.Api.Exceptions;
-using BackendTemplate.Api.Mappers;
+
 using BackendTemplate.Application;
 using BackendTemplate.Infrastructure;
 using Scalar.AspNetCore;
@@ -29,7 +29,7 @@ try
 
     builder.Services.AddApplication();
     builder.Services.AddInfrastructure(connectionString);
-    builder.Services.AddScoped<ITodoItemMapper, TodoItemMapper>();
+
     builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
     builder.Services.AddProblemDetails();
     builder.Services.AddOpenApi();

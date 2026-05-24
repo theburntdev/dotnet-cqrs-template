@@ -51,19 +51,17 @@ public static class TodoItemEndpoints
     private static async Task<IResult> Create(
         [FromBody] CreateTodoItemCommand command,
         ISender sender,
-        ITodoItemMapper mapper,
         CancellationToken ct = default)
     {
         var result = await sender.Send(command, ct);
         return result.ToHttpResult(item =>
-            TypedResults.Created($"/api/todo-items/{item.Id.Value}", mapper.Map(item)));
+            TypedResults.Created($"/api/todo-items/{item.Id.Value}", TodoItemMapper.Map(item)));
     }
 
     private static async Task<IResult> Update(
         Guid id,
         [FromBody] UpdateTodoItemRequest request,
         ISender sender,
-        ITodoItemMapper mapper,
         CancellationToken ct = default)
     {
         var command = new UpdateTodoItemCommand(
@@ -72,7 +70,7 @@ public static class TodoItemEndpoints
             request.Description,
             request.Status);
         var result = await sender.Send(command, ct);
-        return result.ToHttpResult(item => TypedResults.Ok(mapper.Map(item)));
+        return result.ToHttpResult(item => TypedResults.Ok(TodoItemMapper.Map(item)));
     }
 
     private static async Task<IResult> Delete(

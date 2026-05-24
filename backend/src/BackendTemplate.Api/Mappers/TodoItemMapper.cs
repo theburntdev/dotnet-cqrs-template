@@ -6,9 +6,9 @@ using BackendTemplate.Domain.TodoItems;
 using Riok.Mapperly.Abstractions;
 
 [Mapper]
-public partial class TodoItemMapper : ITodoItemMapper
+public static partial class TodoItemMapper
 {
-    public partial TodoItemResponse Map(TodoItem item);
+    public static partial TodoItemResponse Map(TodoItem item);
 
     private static Guid MapId(TodoItemId id) => id.Value;
 }
