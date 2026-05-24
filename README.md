@@ -2,6 +2,25 @@
 
 A .NET 10 CQRS template with ASP.NET Core minimal APIs, EF Core + Postgres, MediatR, FluentValidation, Mapperly, and Serilog.
 
+## Install the Template
+
+**Install locally from this repo:**
+```
+dotnet new install ./
+```
+
+**Scaffold a new project:**
+```
+dotnet new cqrs-api --name MyProject
+```
+
+**Uninstall:**
+```
+dotnet new uninstall ./
+```
+
+---
+
 ## Prerequisites
 
 - .NET 10 SDK
