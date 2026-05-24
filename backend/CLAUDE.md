@@ -1,7 +1,5 @@
 # Backend — C# / .NET
 
-See root `CLAUDE.md` for project vocabulary and cross-cutting rules.
-
 ## Tech choices (decided)
 - **Framework**: ASP.NET Core minimal APIs (not controller-based)
 - **Language**: C# 13, .NET 10
@@ -12,7 +10,7 @@ See root `CLAUDE.md` for project vocabulary and cross-cutting rules.
 - **OpenAPI**: `Microsoft.AspNetCore.OpenApi` (built-in, no Swashbuckle)
 - **Testing**: xUnit + Testcontainers (integration) + NSubstitute (mocks where needed with strict behavior)
 
-## Solution structure (target — not yet created)
+## Solution structure
 ```
 backend/
   BackendTemplate.sln
