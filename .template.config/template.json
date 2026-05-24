@@ -25,6 +25,7 @@
       "exclude": [
         "docs/**",
         ".git/**",
+        ".template.config/**",
         "**/bin/**",
         "**/obj/**",
         "**/.vs/**"
